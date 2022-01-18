@@ -23,6 +23,7 @@ export function useIdle(ms, eventTypes = activityEvents) {
 
     for (const type of eventTypes) {
       window.addEventListener(type, setActive);
+      
     }
 
     return function cleanup() {
@@ -37,7 +38,7 @@ export function useIdle(ms, eventTypes = activityEvents) {
 }
 
 export default function Idle() {
-  const isIdle = useIdle(3000);
+  const isIdle = useIdle(1000);
 
   return (
     <div style={{ textAlign: "center" }}>
